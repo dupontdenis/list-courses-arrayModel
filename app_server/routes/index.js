@@ -1,25 +1,19 @@
-const express = require('express');
+import express from "express";
+import {
+  coursesReadAll,
+  coursesForm,
+  coursesAddOne,
+  coursesReadOne,
+  coursesDeleteOne,
+} from "../controllers/courses.js";
 const router = express.Router();
-const ctrlCourses = require('../controllers/courses');
 
-router
-    .route('/')
-    .get(ctrlCourses.coursesReadAll);
+router.route("/").get(coursesReadAll);
 
-router
-    .route('/new')
-    .get(ctrlCourses.coursesForm)
-    .post(ctrlCourses.coursesAddOne);
+router.route("/new").get(coursesForm).post(coursesAddOne);
 
-router
-    .route('/:id')
-    .get(ctrlCourses.coursesReadOne)
+router.route("/:id").get(coursesReadOne);
 
-router
-    .route('/delete/:id')
-    .get(ctrlCourses.coursesDeleteOne)
+router.route("/delete/:id").get(coursesDeleteOne);
 
-
-
-
-module.exports = router;
+export default router;

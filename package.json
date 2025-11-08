@@ -1,16 +1,18 @@
 {
+  "type":"module",
   "name": "express-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.24.0",
     "debug": "^4.3.2",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
